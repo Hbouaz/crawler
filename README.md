@@ -1,12 +1,14 @@
 # com.web.crawler
-## A simple selenium/java com.web.crawler
+## A simple selenium/java com.web.crawler using Selenium, Java and Gradle
 
 ### Dependencies:
-All depndencies Jars and chromedriver executable have been included into the project.
+All dependencies will be handled by Gradle. chromedriver executable has been included into the project.
 ### Prerequisites:
 Latest version of Chrome needs to be installed on the machine (75 at the time the project was compiled)
-Latest Java version is needed
-### How to Run:
+Latest Java version is needed (12 used)
+
+### How to configure:
+
 I have provided a ```config.properties``` file to include any configurations you want.
 
 - ```url```: base url for the crawler. "Default = https://www.google.com/"
@@ -15,7 +17,14 @@ I have provided a ```config.properties``` file to include any configurations you
 - ```maxLinksPerPage```: maximum good links each parent page should retrieve. “Default = 2”
 - ```maxDepth```: maximum depth of the traversal. “Default = 3”
 
-To build a JAR simply use the main class Crawler.java for artifact build. I also included one Jar with the project
+### How to run the project:
+To run from terminal simply do ```gradle run```
+
+### How to build and run a JAR:
+To build an executable JAR simply run ```gradle clean``` then run fatJar gradle task ```gradle fatJar``` this will
+create an executable Jar under ```build/libs/crawler-1.0-SNAPSHOT.jar```
+To run it go to terminal, cd to project directory and run ```java -jar build/libs/crawler-1.0-SNAPSHOT.jar```
+(run from the project root and do not move the jar as it will break the resources)
 
 ### Output
-The results of the program are displayed into the console using slf4j/log4J library
+The output of the program is displayed on the console using slf4j/log4J library
